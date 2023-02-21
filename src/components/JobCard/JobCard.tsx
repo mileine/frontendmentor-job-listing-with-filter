@@ -1,6 +1,6 @@
 import { JobTags } from "../JobTags/JobTags"
 
-export const JobCard = ({job, addToSelectedTags}) => {
+export const JobCard = ({job}) => {
   return (
     <li className='job-card'>   
       <div className="job-main-info">
@@ -21,7 +21,7 @@ export const JobCard = ({job, addToSelectedTags}) => {
           </div>
         </div>
       </div>
-      <JobTags job={job} addToSelectedTags={addToSelectedTags}/>
+      <JobTags job={job}/>
     </li>
   )
 }

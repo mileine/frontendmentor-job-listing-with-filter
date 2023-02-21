@@ -1,15 +1,15 @@
 import { JobTag } from "../JobTag/JobTag"
 
-export const JobTags = ({job, addToSelectedTags}) => {
+export const JobTags = ({job}) => {
   return (
     <div className="job-tags">
-      <JobTag tag={job.role} addToSelectedTags={addToSelectedTags}/>
-      <JobTag tag={job.level} addToSelectedTags={addToSelectedTags}/>
+      <JobTag tag={job.role} />
+      <JobTag tag={job.level}/>
       { job.languages && job.languages.map(language => 
-        <JobTag tag={language} addToSelectedTags={addToSelectedTags}/>
+        <JobTag tag={language}/>
       )}
       { job.tools && job.tools.map(tool => 
-        <JobTag tag={tool} addToSelectedTags={addToSelectedTags}/>
+        <JobTag tag={tool}/>
       )}
     </div>
   )
