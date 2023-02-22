@@ -1,6 +1,11 @@
+import { IJob } from "../JobsList/JobsList"
 import { JobTag } from "../JobTag/JobTag"
 
-export const JobTags = ({job}) => {
+interface Props {
+  job: IJob,
+}
+
+export const JobTags = ({job}: Props) => {
   return (
     <div className="job-tags">
       <JobTag tag={job.role} />
