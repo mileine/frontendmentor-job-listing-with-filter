@@ -1,15 +1,15 @@
 import { useContext } from "react"
 import JobsContext from "../../context/JobsContext"
+import { FilterTag } from "../FilterTag/FilterTag"
 
-export const JobFilter = () => {
+import './filter.scss'
+
+export const Filter = () => {
   const { state, removeFilterTag, clearFilter } = useContext(JobsContext)
-  let tags = [];
+  let tags = []
   if (state.selectedFilters.length > 0) {
     tags = state.selectedFilters.map(tag => 
-      <>
-        <span>{tag}</span>
-        <button value={tag} onClick={removeFilterTag}>x</button>
-      </>
+      <FilterTag tag={tag}/>
     )
   }
   return (
@@ -17,7 +17,7 @@ export const JobFilter = () => {
       <div className="tags-container">
         { tags }
       </div>
-      <button onClick={clearFilter}>Clear</button>
+      <button className="btn-clear" onClick={clearFilter}>Clear</button>
     </div>
   )
 }

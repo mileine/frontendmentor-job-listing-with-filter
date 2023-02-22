@@ -1,0 +1,28 @@
+.tag {
+  &__wrapper {
+    background-color: hsl(180, 52%, 96%);
+    display: flex;
+    border-radius: 3px;
+    margin-right: 10px;
+  }
+
+  &__name {
+    display: block;
+    color: hsl(180, 29%, 50%);
+    padding: 5px;
+  }
+
+  &__btn-delete {
+    border: none;
+    padding: 5px 10px;
+    color: hsl(180, 52%, 96%);
+    background-color: hsl(180, 29%, 50%);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    &:hover {
+      background-color: hsl(180, 14%, 20%);
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}

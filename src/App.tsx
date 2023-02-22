@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { JobFilter } from './components/JobFilter/JobFilter'
+import { Filter } from './components/Filter/Filter'
 import { JobsList } from './components/JobsList/JobsList'
 import JobsContext from './context/JobsContext'
 import './App.scss'
@@ -11,7 +11,7 @@ function App() {
     <div className="app">
       <div className="header"></div>
       <div className="body">
-        { (state.selectedFilters.length > 0) && <JobFilter /> }
+        { (state.selectedFilters.length > 0) && <Filter /> }
         <JobsList />
       </div>
     </div>
