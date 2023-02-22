@@ -1,0 +1,46 @@
+.line-1 {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.company-name {
+  color: hsl(180, 29%, 50%);
+  margin-right: 20px;
+}
+
+.position {
+  font-size: 24px;
+  color: hsl(180, 29%, 50%);
+  margin-bottom: 10px;
+}
+
+.tag {
+  color: #fff;
+  padding: 5px 15px;
+  margin-right: 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  &.new {
+    background-color: hsl(180, 29%, 50%);
+  }
+  &.featured{
+    background-color: hsl(180, 14%, 20%);
+  }
+}
+
+.extra {
+  color: rgb(124,143,143);
+  font-weight: 500;
+  display: flex;
+  span {
+    position: relative;
+    margin: 5px;
+    display: flex;
+    align-content: center;
+    &:not(:last-of-type)::after{
+      content: '•';
+      margin-left: 5px;
+    }
+  }
+}

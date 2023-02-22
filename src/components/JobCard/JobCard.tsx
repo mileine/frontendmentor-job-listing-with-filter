@@ -1,6 +1,8 @@
 import { IJob } from "../JobsList/JobsList"
 import { JobTags } from "../JobTags/JobTags"
 
+import './jobCard.scss'
+
 interface Props {
   job: IJob,
 }
@@ -14,11 +16,11 @@ export const JobCard = ({ job }: Props) => {
         </div>
         <div className="job-description">
           <div className="line-1">
-            <span className="compan-name">{job.company}</span>
-            {job.new && <span className='new'>NEW!</span>}
-            {job.featured && <span className='featured'>FEATURED</span>}
+            <span className="company-name">{job.company}</span>
+            {job.new && <div className='tag new'>NEW!</div>}
+            {job.featured && <div className='tag featured'>FEATURED</div>}
           </div>
-          <p>{job.position}</p>
+          <p className="position">{job.position}</p>
           <div className="extra">
             <span>{job.postedAt}</span>
             <span>{job.contract}</span>

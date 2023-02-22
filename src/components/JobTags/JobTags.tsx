@@ -1,6 +1,8 @@
 import { IJob } from "../JobsList/JobsList"
 import { JobTag } from "../JobTag/JobTag"
 
+import './jobTags.scss'
+
 interface Props {
   job: IJob,
 }
