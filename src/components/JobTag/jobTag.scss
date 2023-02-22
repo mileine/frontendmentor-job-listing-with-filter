@@ -8,7 +8,8 @@
     border-radius: 3px;
     &:hover {
       background-color: hsl(180, 29%, 50%);
-      color: hsl(180, 52%, 96%);;
+      color: hsl(180, 52%, 96%);
+      cursor: pointer;
     }
   }
   &__name {
