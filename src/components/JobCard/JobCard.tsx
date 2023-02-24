@@ -1,13 +1,10 @@
-import { IJob } from "../JobsList/JobsList"
+import { FunctionComponent } from "react"
+import { JobType } from "../../context/JobsContext"
 import { JobTags } from "../JobTags/JobTags"
-
 import './jobCard.scss'
 
-interface Props {
-  job: IJob,
-}
-
-export const JobCard = ({ job }: Props) => {
+export const JobCard:FunctionComponent<{job: JobType}> = props => {
+  const job: JobType = props.job
   return (
     <li className='job-card'>   
       <div className="job-main-info">

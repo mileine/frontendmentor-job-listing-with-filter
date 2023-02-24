@@ -1,13 +1,13 @@
 import { useContext } from 'react'
-import JobsContext, { JobsContextProps } from '../../context/JobsContext'
+import JobsContext, { JobsContextType } from '../../context/JobsContext'
 import './jobTag.scss'
 
-interface Props {
-  tag: string,
+type Props = {
+  tag: string
 }
 
-export const JobTag = ({tag}: Props) => {
-  const { addToSelectedTags }: JobsContextProps = useContext(JobsContext)
+export const JobTag = ({ tag }: Props) => {
+  const { addToSelectedTags }: JobsContextType = useContext(JobsContext)
   return (
     <button className="job-tag__wrapper" onClick={addToSelectedTags} value={tag}>
       <span className="job-tag__name">{tag}</span>

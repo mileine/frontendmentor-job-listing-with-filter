@@ -1,46 +1,61 @@
 import { createContext, PropsWithChildren, useState} from "react";
-import { IJob } from "../components/JobsList/JobsList";
 import data from '../data/data.json'
 
-export interface JobsContextProps {
-  state: IJobsContext,
-  clearFilter: () => {},
-  removeFilterTag: ()=> {},
-  addToSelectedTags: ()=>{}
+export type JobType = {
+  id: number,
+  company: string,
+  logo: string,
+  new: boolean,
+  featured: boolean,
+  position: string,
+  role: string,
+  level: string,
+  postedAt: string,
+  contract: string,
+  location: string,
+  languages: string[],
+  tools: string[],
+  tags?:string[] | []
 }
 
-interface IJobsContext {
-  jobsList: Array<IJob>,
-  selectedFilters: string[]
+export type JobsContextType = {
+  jobState: GlobalStateType,
+  clearFilter: () => void,
+  removeFilterTag: (evt: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
+  addToSelectedTags: (evt: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+}
+interface GlobalStateType {
+  jobsList: JobType[],
+  selectedTags: string[]
 }
 
-const initialState: IJobsContext = {
+const initialState: GlobalStateType = {
   jobsList: data,
-  selectedFilters: [],
+  selectedTags: [],
 }
 
-export const JobsContext = createContext({});
+export const JobsContext = createContext<JobsContextType>({} as JobsContextType);
 
 export const JobsContextProvider = ({ children }: PropsWithChildren) => {
-  const [state, setState] = useState(initialState);
+  const [jobState, setJobState] = useState(initialState);
 
   const clearFilter = () => {
-    setState({...state, selectedFilters: []})
+    setJobState({...jobState, selectedTags: []})
   }
   
-  const removeFilterTag = (evt: React.FormEvent<HTMLFormElement>) => {
-    const updatedTags = state.selectedFilters.filter(tag => tag !== evt.currentTarget.value)
-    setState({...state, selectedFilters: updatedTags});
+  const removeFilterTag = (evt: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const updatedTags = jobState.selectedTags.filter(tag => tag !== evt.currentTarget.value)
+    setJobState({...jobState, selectedTags: updatedTags});
   }
   
-  const addToSelectedTags = (evt: React.FormEvent<HTMLFormElement>) => {
+  const addToSelectedTags = (evt: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const tag: string = evt.currentTarget.value; 
-    if (!state.selectedFilters.includes(tag)) state.selectedFilters.push(tag);
-    setState({...state})
+    if (!jobState.selectedTags.includes(tag)) jobState.selectedTags.push(tag);
+    setJobState({...jobState})
   }
 
-  const value = {
-    state,
+  const value: JobsContextType = {
+    jobState,
     clearFilter,
     removeFilterTag,
     addToSelectedTags

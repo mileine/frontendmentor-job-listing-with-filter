@@ -1,21 +1,19 @@
-import { IJob } from "../JobsList/JobsList"
+import { FunctionComponent } from "react"
+import { JobType } from "../../context/JobsContext"
 import { JobTag } from "../JobTag/JobTag"
 
 import './jobTags.scss'
 
-interface Props {
-  job: IJob,
-}
-
-export const JobTags = ({job}: Props) => {
+export const JobTags:FunctionComponent<{job: JobType}> = props => {
+  const job: JobType = props.job
   return (
     <div className="job-tags">
       <JobTag tag={job.role} />
       <JobTag tag={job.level}/>
-      { job.languages && job.languages.map((language) => 
+      { job.languages && job.languages.map((language: string) => 
         <JobTag tag={language} key={language}/>
       )}
-      { job.tools && job.tools.map(tool => 
+      { job.tools && job.tools.map((tool: string) => 
         <JobTag tag={tool} key={tool}/>
       )}
     </div>

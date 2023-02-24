@@ -2,11 +2,11 @@ import { useContext } from "react"
 import JobsContext from "../../context/JobsContext"
 import './filterTag.scss'
 
-interface FilterTagProps {
+type Props = {
   tag: string
 }
 
-export const FilterTag = ({ tag }: FilterTagProps) => {
+export const FilterTag = ({ tag }: Props) => {
   const { removeFilterTag } = useContext(JobsContext)
 
   return (
