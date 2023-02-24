@@ -8,8 +8,8 @@ export const Filter = () => {
   const { state, clearFilter } = useContext(JobsContext)
   let tags = []
   if (state.selectedFilters.length > 0) {
-    tags = state.selectedFilters.map((tag: string) => 
-      <FilterTag tag={tag}/>
+    tags = state.selectedFilters.map((tag: string, key: string ) => 
+      <FilterTag tag={tag} key={tag}/>
     )
   }
   return (

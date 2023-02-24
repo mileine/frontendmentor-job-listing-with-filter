@@ -12,11 +12,11 @@ export const JobTags = ({job}: Props) => {
     <div className="job-tags">
       <JobTag tag={job.role} />
       <JobTag tag={job.level}/>
-      { job.languages && job.languages.map(language => 
-        <JobTag tag={language}/>
+      { job.languages && job.languages.map((language) => 
+        <JobTag tag={language} key={language}/>
       )}
       { job.tools && job.tools.map(tool => 
-        <JobTag tag={tool}/>
+        <JobTag tag={tool} key={tool}/>
       )}
     </div>
   )

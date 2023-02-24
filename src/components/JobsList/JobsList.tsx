@@ -50,7 +50,7 @@ export const JobsList = () => {
   return (
     <ul className="jobs-list">
       { 
-        filteredJobs.map((job: IJob) => (<JobCard job={job} />))
+        filteredJobs.map((job: IJob) => (<JobCard job={job} key={job.id}/>))
       }
     </ul>
   )
