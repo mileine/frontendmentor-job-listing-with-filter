@@ -27,20 +27,25 @@
 .jobs-list {
   max-width: 80%;
   margin: auto; 
+  position: relative;
+  top: 30px;
 }
 
 .job-card {
   background-color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 3px;
   border-left: 4px solid transparent;
-  
+  box-shadow: 2px 10px 10px 1px rgba(0, 0, 0, 0.05);
+
   @media (max-width: 375px) {
+    padding: 20px 10px;
     flex-direction: column;
+    margin-bottom: 50px;
   }
   &:hover {
     border-left-color: hsl(180, 29%, 50%);
@@ -60,9 +65,9 @@
     position: relative;
     .logo-container {
       position: absolute;
-      top: -10px;
+      top: -36px;
       .job-logo {
-        width: 40px;
+        width: 48px;
       }
     }
   }
@@ -70,16 +75,4 @@
 
 .job-description {
   margin-left: 20px;
-}
-
-.filter {
-  display: flex;
-  background-color: #fff;
-  width: 80%;
-  margin: 10px auto;
-  position: relative;
-  top: -30px;
-  padding: 10px 25px;
-  border-radius: 3px;
-  justify-content: space-between;
 }

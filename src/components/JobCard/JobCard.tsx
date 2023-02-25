@@ -25,6 +25,7 @@ export const JobCard:FunctionComponent<{job: JobType}> = props => {
           </div>
         </div>
       </div>
+      <hr className="divider" />
       <JobTags job={job}/>
     </li>
   )
