@@ -19,6 +19,7 @@
   padding: 10px 0;
   @media (max-width: 375px) {
     flex-wrap: wrap;
+    flex-grow: 1;
   }
 }
 
