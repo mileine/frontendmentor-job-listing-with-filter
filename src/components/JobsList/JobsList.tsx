@@ -9,7 +9,7 @@ export const JobsList = () => {
   const filteredJobs: JobType[] = jobState.selectedTags.length === 0 ? formatJobsToBeDisplayed : formatJobsToBeDisplayed.filter((job: JobType) => checker(job.tags))
   
   return (
-    <ul className="jobs-list">
+    <ul className={`jobs-list${jobState.selectedTags.length > 0 ? ' filtered': ''}`}>
       { 
         filteredJobs.map((job: JobType) => (<JobCard job={job} key={job.id}/>))
       }

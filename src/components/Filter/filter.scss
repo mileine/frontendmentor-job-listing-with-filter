@@ -2,7 +2,7 @@
   display: flex;
   background-color: #fff;
   width: 80%;
-  margin: 10px auto;
+  margin: auto;
   position: relative;
   top: -30px;
   padding: 10px 25px;
@@ -20,6 +20,7 @@
   @media (max-width: 375px) {
     flex-wrap: wrap;
     flex-grow: 1;
+    align-items: baseline;
   }
 }
 
